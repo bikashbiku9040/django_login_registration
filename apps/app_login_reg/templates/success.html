@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Success Page</title>
+</head>
+<style>
+    .green {
+        color: green;
+    }
+</style>
+<body>
+    <h1>Welcome to the Website {{request.session.name}}!</h1>
+    {% if request.session.logged_in%}
+    <p class="green">Congratulations on logging in!</p>
+    {% endif %}
+    {% if request.session.registered%}
+    <p class="green">Congratulations on registering!</p>
+    {% endif %}
+    <a href="/logout">Logout</a>
+</body>
+</html>
